@@ -7,6 +7,7 @@ Make sure you have the following in order to be able to run/build the project:
 > [ionic](https://www.npmjs.com/package/ionic) >= 3.20: `npm i -g ionic`
 > [cordova](https://www.npmjs.com/package/cordova) >= 8.0: `npm i -g cordova`
 
+
 For android you'll need:
 > [Java JDK](http://www.oracle.com/technetwork/java/javase/downloads/index-jsp-138363.html) recommended jdk 1.8
 > [Android Studio](https://developer.android.com/studio/index.html) recommended 3.0
