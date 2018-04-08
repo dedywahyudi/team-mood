@@ -1,0 +1,52 @@
+page-footer {
+  // add the top border
+  .toolbar {
+    border-top: solid 1px color($colors, footerBorder);
+  }
+
+  // make buttons auto-resize
+  .bar-button-md,
+  .bar-button-ios {
+    height: auto;
+  }
+
+  // make the buttons flex horizontally
+  ion-buttons {
+    display: flex;
+    width: 100%;
+
+    >* {
+      flex-grow: 1;
+      flex-basis: 0;
+      text-align: center;
+    }
+
+    .button-inner {
+      display: block;
+      font-size: 11px;
+      color: color($colors, text, light);
+      text-transform: none;
+      ion-icon {
+        font-size: 27px;
+      }
+    }
+
+    // active button styling
+    .active .button-inner {
+      color: color($colors, text, dark);
+      .ic {
+        opacity: .8;
+      }
+    }
+
+    .ic {
+      margin: 0 auto;
+      opacity: .347;
+    }
+  }
+}
+
+// remove the ios-styling of the footer
+.footer-ios .toolbar-ios:first-child .toolbar-background-ios {
+  border-width: 0;
+}

@@ -1,0 +1,28 @@
+<ion-content no-bounce>
+  <!-- step to choose/vote the mood -->
+  <article class="step select-mood-step" *ngIf="state.step === 'select-mood'">
+    <header
+      *ngIf="state.user|async as user"
+      [class.hidden]="state.hasIntroduction"
+    >
+      <h1>Hello, {{user.first}}!</h1>
+      <h2>How are you feeling today?</h2>
+    </header>
+
+    <!-- mood selector -->
+    <div class="selector-wrap">
+      <feel-selector (select)="moodSelected($event)"></feel-selector>
+    </div>
+
+    <!-- home button -->
+    <div class="home-btn" *ngIf="!state.hasIntroduction && !state.mood">
+      <button ion-button outline round color="light" (click)="redirectHome()">Home</button>
+    </div>
+  </article>
+
+  <!-- user voted, show step to add a comment to his vote -->
+  <article class="step" *ngIf="state.step === 'feedback'">
+    <vote-feedback [mood]="state.mood" (comment)="comment($event)"></vote-feedback>
+  </article>
+
+</ion-content>

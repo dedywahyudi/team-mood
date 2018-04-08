@@ -1,0 +1,14 @@
+<!-- Display a scrollable list with a date interval, and allow user to select a specific week -->
+<div class="date-nav">
+  <ion-scroll scrollX="true" #scrollEl>
+    <button ion-button round
+      *ngFor="let week of interval; let index=index"
+      [clear]="selected !== index ? true: false"
+      [color]="selected === index ? color: ''"
+      (click)="doSelect(index)"
+    >
+      {{week[0]|date:'MMM d'}} - {{week[1]|date:getFm(week)}}
+    </button>
+  </ion-scroll>
+</div>
+

@@ -1,0 +1,108 @@
+line-chart {
+  position: relative;
+
+  // hide the x axis's default path line
+  .axis--x path {
+    display: none;
+  }
+
+  // set font & color for chart texts
+  text {
+    font-family: $main-font;
+    font-size: 12px;
+    fill: color($colors, text, base);
+    text-transform: uppercase;
+  }
+
+  // position the x-axis ticks
+  .axis--x .tick {
+    text {
+      transform: translate(0, 5px);
+    }
+
+    // make the x-axis tick lines dashed
+    line {
+      stroke-dasharray: 2, 2;
+      stroke: color($colors, border);
+
+      &.highlight {
+        stroke: color($colors, highlight);
+      }
+    }
+  }
+
+  // stylize the y-axis tick line
+  .gridline {
+    stroke-width: 0.5px;
+    stroke: color($colors, border);
+  }
+
+  // customize the graphs
+  .graph {
+    .line {
+      stroke-width: 2px;
+    }
+
+    // the mood label for each graph
+    .label {
+      transform: translate(4px, 25px);
+      dominant-baseline: middle;
+      tspan {
+        dominant-baseline: text-after-edge;
+        &:first-child:last-child {
+          dominant-baseline: inherit;
+        }
+      }
+    }
+
+    // the intersection dot between graph & x-axis ticks
+    .dot {
+      stroke: currentColor;
+      stroke-width: 4px;
+      stroke-opacity: .3;
+    }
+  }
+
+  // the chart's tooltip
+  .tooltip {
+    position: absolute;
+    z-index: 1000;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    color: color($colors, text, dark);
+    background-color: rgba(white, .85);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+    top: calc(100% - 30px);
+    transform: translateX(-50%);
+
+    // list with all moods
+    .moods-wrap {
+      margin: 10px 0 5px;
+      padding: 0;
+      list-style: none;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    // customize the mood circles
+    .mood {
+      display: inline-block;
+      width: 22px;
+      height: 22px;
+      padding: 0;
+      font-size: 14px;
+      line-height: 22px;
+      border-radius: 100%;
+      background-color: currentColor;
+      > * {
+        color: color($colors, text, contrast);
+      }
+    }
+
+    .mood + .mood {
+      margin-left: 10px;
+    }
+  }
+}

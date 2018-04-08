@@ -1,0 +1,55 @@
+comments {
+  .comments-wrap {
+    padding: 0 0 0 15px;
+  }
+
+  // customize the list item
+  // align the content items vertically
+  .comment-item {
+    display: flex;
+    align-items: center;
+    min-height: 54px;
+    padding: 6px 15px 6px 0;
+    line-height: 20px;
+    .comment-info {
+      width: 100%;
+      margin-left: 5px;
+    }
+
+    // add a bottom border for all items except the last one
+    &:not(:last-child) {
+      border-bottom: solid 1px color($colors, border);
+    }
+
+    // render the mood color
+    &:before {
+      content: '';
+      flex-shrink: 0;
+      display: inline-block;
+      width: 23px;
+      height: 23px;
+      margin-right: 10px;
+      border-radius: 100%;
+      background-color: currentColor;
+    }
+  }
+
+  .comment-mood {
+    color: color($colors, text, dark);
+    text-transform: capitalize;
+  }
+
+  .comment-text {
+    font-size: 15px;
+    color: color($colors, text, base);
+  }
+
+  .comment-date {
+    flex-shrink: 0;
+    margin-left: auto;
+    padding-left: 10px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: color($colors, text, light);
+  }
+}

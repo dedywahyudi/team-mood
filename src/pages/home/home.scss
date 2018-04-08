@@ -1,0 +1,181 @@
+page-home {
+  // wrapper for a week, showing user's voted mood for each week's days
+  .week-mood {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    font-size: 12px;
+    color: color($colors, text, light);
+  }
+
+  // a week's day item
+  .day-mood {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    border-radius: 100%;
+    background-color: gray;
+    &[data-mood] {
+      background-color: currentColor;
+    }
+  }
+
+  // team card's wrapper
+  .card-wrap {
+    overflow: hidden;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: color($colors, light);
+  }
+
+  .team-card {
+    position: relative;
+    min-height: 170px;
+    margin: 5px 0 15px;
+    padding: 50px 15px 15px 180px;
+  }
+
+  .team-chart {
+    position: relative;
+    height: 160px;
+
+    donut-chart {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .chart-legend {
+      line-height: 18px;
+
+      & + .chart-legend {
+        margin-top: 15px;
+      }
+
+      .label {
+        font-size: 16px;
+        font-weight: normal;
+        color: color($colors, text, base);
+        text-transform: capitalize;
+      }
+
+      .value {
+        font-size: 24px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  // team name & status
+  .team-info {
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 315px;
+    height: 260px;
+    padding: 115px 15px 15px 115px;
+    background: linear-gradient(-25deg, color($colors, 'very happy') 0%, color($colors, happy) 90%);
+    font-size: 16px;
+    border-radius: 0 0 200px 115px;
+    color: color($colors, text, contrast);
+  }
+
+  .saddest .team-info {
+    background: linear-gradient(-25deg, color($colors, 'very sad') 0%, color($colors, sad) 90%);
+  }
+
+  .team-name {
+    font-size: 21px;
+  }
+
+  // the date of the team card
+  .team-date {
+    display: block;
+    margin-top: 12px;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgba(color($colors, text, contrast), .8);
+    &:after {
+      content: '';
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 10px;
+      border-top: solid 6px rgba(color($colors, text, contrast), .8);
+      border-left: solid 6px transparent;
+      border-right: solid 6px transparent;
+    }
+  }
+
+  // styling for the weekly digest slider
+  .digest-wrap {
+    position: relative;
+    margin: -10px 0;
+    color: color($colors, digest);
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: 70px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      background-color: color($colors, dark);
+    }
+
+    h4 {
+      margin-left: 5px;
+      margin-bottom: 10px;
+      font-weight: normal;
+    }
+
+    // customize the slide
+    .card-wrap {
+      display: flex;
+      text-align: left;
+      > * {
+        padding: 5px 0;
+      }
+    }
+
+    ion-slide {
+      height: auto;
+    }
+
+    .slide-zoom, .card-wrap {
+      height: 100%;
+    }
+  }
+
+  // slide index indicator
+  .digest-index {
+    flex-shrink: 0;
+    width: 40px;
+    margin-right: 15px;
+    border-right: solid 1px color($colors, border);
+    font-size: 16px;
+    font-weight: 300;
+  }
+  // slide text
+  .digest-text {
+    font-size: 16px;
+    line-height: 21px;
+    color: color($colors, text, base);
+  }
+  // slide "mentions" text (if a team mentioned something specifically)
+  .digest-mentions {
+    margin-top: 5px;
+    font-size: 14px;
+    line-height: 15px;
+    color: color($colors, text, light);
+    span {
+      font-weight: 500;
+      font-style: italic;
+    }
+  }
+}
+
+

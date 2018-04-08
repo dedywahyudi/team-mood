@@ -1,0 +1,105 @@
+[
+  {
+    "date": "2018-04-06",
+    "teamName": "Team Acme 2",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 3,
+        "mood": "very sad"
+      },
+      {
+        "count": 3,
+        "mood": "sad"
+      }
+    ]
+  },
+  {
+    "date": "2018-04-04",
+    "teamName": "Team Acme 2",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 3,
+        "mood": "very sad"
+      },
+      {
+        "count": 3,
+        "mood": "sad"
+      }
+    ]
+  },
+  {
+    "date": "2018-04-05",
+    "teamName": "Team Acme 2",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 3,
+        "mood": "very sad"
+      },
+      {
+        "count": 3,
+        "mood": "sad"
+      }
+    ]
+  },
+  {
+    "date": "2018-04-03",
+    "teamName": "Team Acme 2",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 3,
+        "mood": "very sad"
+      },
+      {
+        "count": 3,
+        "mood": "sad"
+      }
+    ]
+  }, {
+    "date": "2018-04-02",
+    "teamName": "Team Acme 3",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 4,
+        "mood": "very sad"
+      },
+      {
+        "count": 5,
+        "mood": "sad"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-06",
+    "teamName": "Team Acme 2",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 3,
+        "mood": "very sad"
+      },
+      {
+        "count": 3,
+        "mood": "sad"
+      }
+    ]
+  }, {
+    "date": "2018-03-05",
+    "teamName": "Team Acme 3",
+    "votesCount": 12,
+    "votes": [
+      {
+        "count": 4,
+        "mood": "very sad"
+      },
+      {
+        "count": 5,
+        "mood": "sad"
+      }
+    ]
+  }
+]

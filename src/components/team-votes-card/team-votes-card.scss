@@ -1,0 +1,67 @@
+team-votes-card {
+
+  // main wrapper styling
+  .wrapper {
+    margin: 10px;
+    padding: 15px 15px 10px;
+    background-color: color($colors, light);
+    border-radius: 4px;
+  }
+
+  h3 {
+    font-weight: 400;
+  }
+
+  // wrapper for all 5 mood charts
+  .charts-wrap {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+  }
+
+  // one-mood chart item
+  .chart-item {
+    flex: 1 1 auto;
+    position: relative;
+
+    // make the chart's width/height ratio to 1:1
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      padding-top: 100%;
+    }
+
+    // re-size the chart within the item
+    donut-chart {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: 0 0;
+      transition: transform .25s ease;
+
+      width: 61.54%;
+      height: 61.54%;
+    }
+
+    // increase the chart on the "greatest" item
+    &.incr donut-chart {
+      transform: scale(1.375) translate(-50%, -50%);
+    }
+
+    // styling for chart's legend
+    .chart-legend {
+      font-size: 14px;
+      color: color($colors, text, light);
+    }
+  }
+
+  // comments icon & counter
+  .comments {
+    font-size: 16px;
+    .ic {
+      margin-right: 5px;
+    }
+  }
+}

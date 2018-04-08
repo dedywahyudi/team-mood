@@ -1,0 +1,24 @@
+<div class="wrapper" [attr.data-selected]="options[preselect]" [attr.data-confirmed]="selected">
+  <!-- the horizontal ox axis to help us determin the angle at which the user is dragging the slider -->
+  <div class="ox-axis" #oxAxis></div>
+
+  <!-- the inner free-running circle -->
+  <div class="inner"></div>
+
+  <!-- list with all the available options -->
+  <div class="options-wrap">
+    <div class="option" *ngFor="let option of options" [attr.data-mood]="option">
+      <span class="dot"></span>
+    </div>
+  </div>
+
+  <!-- the slider that the user will drag around -->
+  <div class="track" #track>
+    <input class="slider" type="range" min="0" max="100" step="1" #slider [(ngModel)]="value" [class.init]="!value" />
+  </div>
+
+  <!-- the audio-input selector -->
+  <div class="select-audio" (click)="showAudioModal()">
+    <span class="ic ic-mic"></span>
+  </div>
+</div>

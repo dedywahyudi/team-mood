@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="flex center between">
+    <h3>{{team.teamName}}</h3>
+
+    <span class="comments" (click)="seeComments($event)">
+      <span class="ic ic-comments"></span>
+      {{comments}}
+    </span>
+  </div>
+
+  <div class="charts-wrap">
+    <div class="chart-item" *ngFor="let vote of votes trackBy:index" [class.incr]="vote.mood === greatest.mood">
+      <donut-chart [items]="[vote]" [total]="votesCount" [border]="vote.mood === greatest.mood ? 4.35 : 6" anim>
+        <span class="chart-legend">{{vote.count}}</span>
+      </donut-chart>
+    </div>
+  </div>
+</div>
+

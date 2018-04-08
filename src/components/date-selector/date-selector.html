@@ -1,0 +1,13 @@
+<!-- Display a scrollable list with a date interval, and allow user to select a specific date -->
+<div class="date-nav">
+  <ion-scroll scrollX="true" #scrollEl>
+    <button ion-button round
+      [clear]="!isSelected(day) ? true: false"
+      [color]="isSelected(day) ? color: ''"
+      (click)="doSelect(day)"
+      *ngFor="let day of interval"
+    >
+      {{day|date:(day.getDate() === 1 ? 'MMM d' : 'd')}}
+    </button>
+  </ion-scroll>
+</div>

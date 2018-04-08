@@ -1,0 +1,60 @@
+page-vote {
+  // add bg-color for page
+  .content {
+    .scroll-content {
+      background-color: color($colors, dark);
+      padding: 0 16px 15px;
+      >*:first-child {
+        padding-top: 7.5vh;
+      }
+    }
+  }
+
+  // make each step take full height
+  .step {
+    height: 100%;
+  }
+
+  header {
+    text-align: center;
+    line-height: 24px;
+  }
+
+  h1 {
+    color: color($colors, light);
+    font-weight: 500;
+    font-size: 28px;
+
+    margin-bottom: 15px;
+  }
+
+  h2 {
+    color: color($colors, lighter);
+    font-weight: 300;
+    font-size: 24px;
+  }
+
+  .selector-wrap {
+    margin: 13vh 37px 16px;
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  // step for selecting mood
+  .select-mood-step {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home-btn {
+    margin-top: auto;
+    margin-bottom: 17px;
+    text-align: center;
+    .button {
+      min-width: 66%;
+    }
+  }
+}
+

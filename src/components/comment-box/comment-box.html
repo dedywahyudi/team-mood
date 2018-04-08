@@ -1,0 +1,26 @@
+<!-- comment's box header action buttons -->
+<div class="nav-bar">
+  <span (click)="dismiss()">Cancel</span>
+  <span (click)="dismiss(textComment)">Submit</span>
+</div>
+
+<!-- texts for the profile feedback modal -->
+<div class="feedback-text" *ngIf="feedback">
+  <h1>Your Feedback</h1>
+  <h4>Let us know what you think. Your request or suggest new features or changes to be made for the app.</h4>
+</div>
+
+<!-- wrapper for textarea input -->
+<div class="text-wrap" (focusin)="hideaudio=true" (focusout)="hideaudio=false">
+  <textarea [(ngModel)]="partial" #textArea></textarea>
+</div>
+
+<!-- footer for the audio-input modal -->
+<div class="audio-footer" *ngIf="type==='audio'&&!keyboardIsVisible&&!hideaudio">
+  <!-- placeholder animation for the audio "spectrum" -->
+  <div class="audio-spectre" [class.animate]="isListening">
+    <img src="./assets/imgs/speech.png" alt="">
+  </div>
+  <!-- dismiss button -->
+  <a href="javascript:;" (click)="dismiss(textComment)">Done</a>
+</div>

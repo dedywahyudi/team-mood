@@ -1,0 +1,32 @@
+bar-chart {
+  // hide the axis main paths
+  .axis--y path,
+  .axis--x path {
+    display: none;
+  }
+
+  // set font for axis' ticks
+  .axis--x .tick,
+  .axis--y .tick {
+    text {
+      font-family: $main-font;
+      font-size: 12px;
+      fill: color($colors, text, light);
+      text-transform: uppercase;
+    }
+  }
+
+  // the tick lines for the x axis are hidden
+  .axis--x .tick {
+    line {
+      display: none;
+    }
+  }
+
+  // customize the y axis line tick
+  .axis--y .tick {
+    line {
+      stroke: color($colors, border);
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<ion-header class="page-header">
+  <!-- page title & search icon -->
+  <div class="flex center between">
+    <h3>My Teams</h3>
+    <span class="ic ic-search"></span>
+  </div>
+  <!-- date selector -->
+  <div>
+    <date-selector [start]="startDay" (select)="fetchData($event)"></date-selector>
+  </div>
+</ion-header>
+
+<ion-content no-bounce>
+  <!-- show cards for each team with the votes they added -->
+  <ng-container *ngFor="let team of teams trackBy:index">
+    <team-votes-card
+      [team]="team"
+      (click)="navigate(team.id)"
+      (showComments)="navigate(team.id, 'comments')"
+    ></team-votes-card>
+  </ng-container>
+
+  <!-- report to me teams -->
+  <h3 class="section-title">Report to me</h3>
+  <ng-container *ngFor="let team of myTeams trackBy:index">
+    <team-votes-card
+      [team]="team"
+      (click)="navigate(team.id)"
+      (showComments)="navigate(team.id, 'comments')"
+    ></team-votes-card>
+  </ng-container>
+</ion-content>
+
+<!-- page footer -->
+<ion-footer>
+  <page-footer active="team"></page-footer>
+</ion-footer>

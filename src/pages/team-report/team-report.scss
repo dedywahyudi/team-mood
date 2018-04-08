@@ -1,0 +1,93 @@
+page-team-report {
+
+  // set sizes for charts
+  bar-chart, line-chart {
+    display: block;
+    height: 320px;
+  }
+  line-chart {
+    margin-top: 7px;
+  }
+
+  // header title spacer
+  .spacer {
+    display: block;
+    width: 24px;
+  }
+
+  // margin for chart type selector
+  .chart-view-mode {
+    margin-top: 12px;
+  }
+
+  // style for view/interval type selector (day/week/month)
+  .view-mode-select {
+    margin-top: 12px;
+    > * {
+      margin-right: 30px;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 15px;
+      color: color($colors, text, light);
+    }
+
+    // active item
+    .active {
+      color: color($colors, text, contrast);
+    }
+  }
+
+  // hide the additional page title when page isn't scrolled to comments
+  .page-header {
+    h1 {
+      margin-top: 15px;
+    }
+  }
+
+  .page-header:not(.summary-header) {
+    .comments-details {
+      display: none;
+    }
+  }
+
+  // show the additional page title when page isn't scrolled to comments
+  // hide other elements (main title, back-button text)
+  .summary-header {
+    padding-top: 11.5px;
+    padding-bottom: 5px;
+    + .content  {
+      .comments-section {
+        padding-top: 52px;
+      }
+      .section-title {
+        position: fixed;
+        width: 100%;
+        top: 67px;
+        left: 0;
+        margin: 0;
+        padding-top: 30px;
+        padding-bottom: 12px;
+        background: color($colors, bg);
+      }
+    }
+
+    h1,
+    .view-toolbar,
+    .back-btn h3 {
+      display: none;
+    }
+
+    // the element showing the interval for which the comments are displayed
+    .comments-date {
+      font-size: 14px;
+      text-align: center;
+      text-transform: uppercase;
+      color: color($colors, text, light);
+    }
+  }
+
+  .comments-section {
+    padding: 1px 0 0;
+    min-height: calc(100vh - 68px - 49px);
+  }
+}

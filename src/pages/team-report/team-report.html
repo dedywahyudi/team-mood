@@ -1,0 +1,74 @@
+<ion-header class="page-header" [class.summary-header]="summaryHeader">
+  <!-- back button -->
+  <!-- also page title when scrolled to comments -->
+  <div class="flex center between">
+    <button ion-button class="back-btn" (click)="goBack()">
+      <span class="ic ic-back"></span>
+      <h3>My Teams</h3>
+    </button>
+    <!-- page title & comments interval when scrolled to comments -->
+    <div class="comments-details">
+      <h3>{{teamData.teamName}}</h3>
+      <div class="comments-date">
+        <ng-template #intDate>
+          {{interval[0]|date:'MMM d'}} - {{interval[1]|date:getFm(interval)}}
+        </ng-template>
+        <ng-container *ngIf="!interval; else intDate">{{selectedDate|date:'MMM d'}}</ng-container>
+      </div>
+    </div>
+    <!-- align the page title -->
+    <span class="spacer"></span>
+  </div>
+
+  <!-- page title -->
+  <h1>{{teamData.teamName}}</h1>
+
+  <!-- select what interval to view (day/week) data for-->
+  <div class="view-toolbar flex center between">
+    <div class="view-mode-select">
+      <div *ngFor="let mode of viewModes; let index=index" (click)="changeViewMode(index)" [class.active]="viewMode===index">
+        {{mode}}
+      </div>
+    </div>
+
+    <div class="chart-view-mode" *ngIf="viewMode===1" (click)="viewLineChart=!viewLineChart">
+      <span class="ic" [ngClass]="{'ic-line': !viewLineChart, 'ic-bar': viewLineChart}"></span>
+    </div>
+  </div>
+</ion-header>
+
+<!-- page content -->
+<ion-content (ionScroll)="scrollHandler($event)" no-bounce>
+  <!-- day view -->
+  <section *ngIf="viewMode===0">
+    <div class="section-content">
+      <date-selector [start]="startDay" [selectedDate]="selectedDate" color="dark" (select)="fetchData($event)"></date-selector>
+      <!-- the view chart -->
+      <bar-chart [items]="teamData.votes" [bands]="moods"></bar-chart>
+    </div>
+  </section>
+
+  <!-- week view -->
+  <section *ngIf="viewMode===1">
+    <div class="section-content">
+      <week-selector [start]="startDay" color="dark" (select)="fetchData($event)"></week-selector>
+
+      <!-- the view charts -->
+      <bar-chart [items]="teamData.votes" *ngIf="!viewLineChart" [bands]="moods"></bar-chart>
+      <line-chart [items]="teamData.votes" [interval]="interval" [bands]="moods" *ngIf="viewLineChart"></line-chart>
+    </div>
+  </section>
+
+  <!-- comments section -->
+  <section class="comments-section" #commentsEl [attr.hidden]="!comments.length||null">
+    <h3 class="section-title">Comments</h3>
+    <div class="section-content">
+      <comments [comments]="comments" [showMoodName]="false"></comments>
+    </div>
+  </section>
+</ion-content>
+
+<!-- page footer -->
+<ion-footer>
+  <page-footer active="team"></page-footer>
+</ion-footer>

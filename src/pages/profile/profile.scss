@@ -1,0 +1,72 @@
+page-profile {
+  .page-header > *:first-child {
+    margin-top: 5px;
+    z-index: 1;
+    position: relative;
+  }
+
+  // year selector
+  .select-year {
+    padding: 0;
+    margin: 0;
+    background-color: transparent;;
+    .select {
+      padding: 0 10px 0 0;
+    }
+
+    .item-inner {
+      border: none;
+    }
+  }
+
+  // style the logout button
+  .logout-btn,
+  .select-year {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: .5;
+    color: color($colors, text, contrast);
+  }
+
+  .logout-btn {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+  }
+
+  // user details
+  .user-name {
+    margin: 15px 0 10px;
+    text-align: center;
+  }
+
+  .user-job {
+    margin: 5px 0 12px;
+    text-align: center;
+    font-weight: 400;
+    color: color($colors, lighter);
+  }
+  .user-avatar {
+    border-radius: 100%;
+  }
+
+  // add feedback button
+  .feedback-link {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    font-size: 17px;
+    color: rgba(color($colors, text, contrast), .5);
+    background-color: rgba(color($colors, dark), .93);
+    .ic-feedback {
+      margin-right: 8px;
+    }
+  }
+
+  // the chart showing user voted moods
+  profile-chart {
+    height: 258px;
+    display: block;
+    margin-top: -27px;
+  }
+}

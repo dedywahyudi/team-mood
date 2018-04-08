@@ -1,0 +1,22 @@
+<!-- Display a list of comments with their metadata (mood & date) -->
+<div class="comments-wrap">
+  <!-- loop through the comments list -->
+  <div class="comment-item" *ngFor="let comment of comments" [attr.data-mood]="comment.mood">
+    <!-- template for rendering the list element with the mood name -->
+    <ng-template #moodName>
+      <div class="comment-info">
+        <div class="flex center ">
+          <h4 class="comment-mood">{{comment.mood}}</h4>
+          <div class="comment-date">{{comment.date|dateFm:'MMM d'}}</div>
+        </div>
+        <div class="comment-text">{{comment.feedback}}</div>
+      </div>
+    </ng-template>
+
+    <!-- show the list element without the mood name -->
+    <ng-container *ngIf="!showMoodName; else moodName">
+      <div class="comment-text">{{comment.feedback}}</div>
+      <div class="comment-date">{{comment.date|dateFm:'MMM d'}}</div>
+    </ng-container>
+  </div>
+</div>

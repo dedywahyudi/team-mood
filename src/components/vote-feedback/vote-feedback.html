@@ -1,0 +1,33 @@
+<div class="choose-action">
+  <!-- show a different header based on the selected mood -->
+  <div class="head">
+    <div *ngIf="mood==='sad'||mood==='very sad'">
+      <h1>Sorry to hear that <span [attr.data-mood]="mood">you're {{mood}}</span></h1>
+      <h2>Wanna tell us about it?</h2>
+    </div>
+    <div *ngIf="mood==='happy'||mood==='very happy'">
+      <h1>Glad to know <span [attr.data-mood]="mood">you are {{mood}}</span></h1>
+      <h2>Wanna tell us about it?</h2>
+    </div>
+    <div *ngIf="mood==='neutral'">
+      <h1>Thanks for sharing your mood!</h1>
+      <h2>Any areas/topics you like to address in the future?</h2>
+    </div>
+  </div>
+
+  <!-- footer actions -->
+  <footer class="actions">
+    <!-- add text via voice input -->
+    <div class="action" (click)="showCommentModal('audio')">
+      <span class="ic ic-mic"></span>
+    </div>
+    <!-- add text via keyboard input -->
+    <div class="action" (click)="showCommentModal('text')">
+      <span class="ic ic-keyboard"></span>
+    </div>
+    <!-- just skip adding a comment -->
+    <div class="action" (click)="send()">
+      <span class="ic ic-arrow-right"></span>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,73 @@
+<ion-header class="page-header">
+  <!-- page title & vote button -->
+  <div class="flex center between">
+    <h3>My Weekly Mood</h3>
+    <a ion-button outline round color="light" href="javascript:;" (click)="navigate('VotePage')">Vote My Mood</a>
+  </div>
+  <!-- show the user voted moods for each day of current week -->
+  <div>
+    <div class="week-mood" *ngIf="user">
+      <div *ngFor="let day of weekDays" (click)="chooseDay(day)">
+        <div class="day-mood" [attr.data-mood]="getMood(day).mood"></div>
+        <div *ngIf="day===today">Today</div>
+      </div>
+    </div>
+  </div>
+</ion-header>
+
+<ion-content no-bounce>
+  <!-- show a slider with team's weekly digest comments -->
+  <div padding class="digest-wrap" *ngIf="digest$|async as digest">
+    <h4>Weekly Digest</h4>
+    <ion-slides spaceBetween="10" autoplay="5000" loop="true">
+      <ion-slide *ngFor="let item of digest; let index=index">
+        <div class="card-wrap">
+          <!-- slider counter -->
+          <div class="digest-index">
+            {{index+1}}/{{digest.length}}
+          </div>
+          <div>
+            <div class="digest-text">{{item.text}}</div>
+            <div class="digest-mentions" *ngIf="item.mentions"><span>{{item.mentions}}</span> were mentioned in several comments</div>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slides>
+
+  </div>
+  <!-- show the happiest & saddest team -->
+  <div padding>
+    <div class="card-wrap team-card" *ngIf="happiestTeam">
+      <ng-container *ngTemplateOutlet="teamCard; context: {team: happiestTeam, title: 'Happiest'}"></ng-container>
+    </div>
+    <div class="card-wrap team-card saddest" *ngIf="saddestTeam">
+      <ng-container *ngTemplateOutlet="teamCard; context: {team: saddestTeam, title: 'Saddest'}"></ng-container>
+    </div>
+  </div>
+</ion-content>
+
+<!-- page footer, active page is home -->
+<ion-footer>
+  <page-footer active="home"></page-footer>
+</ion-footer>
+
+<!-- tempalte to render the moodiest team of the day (happiest/saddest) -->
+<ng-template #teamCard let-title="title" let-team="team">
+  <div class="team-info">
+    <!-- team name & status -->
+    <div class="team-mood">{{title}} Team</div>
+    <div class="team-name">{{team.teamName}}</div>
+    <a href="javascript:;" class="team-date">
+      {{selectedDay === today ? 'Today' : weekDayNames[selectedDay-1]}}
+    </a>
+  </div>
+  <!-- the chart showing the top 2 most voted moods by the team -->
+  <div class="team-chart">
+    <donut-chart [items]="team.votes" [total]="team.votesCount">
+      <div class="chart-legend" *ngFor="let vote of team.votes">
+        <div class="value" [attr.data-mood]="vote.mood">{{vote.count}}</div>
+        <div class="label">{{vote.mood}}</div>
+      </div>
+    </donut-chart>
+  </div>
+</ng-template>

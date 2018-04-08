@@ -1,0 +1,43 @@
+<ion-content no-bounce>
+  <!-- page header -->
+  <div class="page-header">
+    <div class="flex center between">
+      <!-- year selector -->
+      <ion-item class="select-year">
+        <ion-select [(ngModel)]="year" interface="popover" color="light" (ngModelChange)="updateChartData(year)">
+          <ion-option value="YTD" selected>YTD</ion-option>
+          <ion-option value="2017">2017</ion-option>
+        </ion-select>
+      </ion-item>
+      <!-- logout button -->
+      <button ion-button clear color="light" class="logout-btn">LOG OUT</button>
+    </div>
+
+    <!-- chart showing user voted moods -->
+    <profile-chart [tracks]="moods" [items]="chartData">
+      <img class="user-avatar" [attr.src]="user.avatar" alt="" />
+    </profile-chart>
+    <!-- user details (name) -->
+    <h2 class="user-name">{{user.first}} {{user.last}}</h2>
+    <h4 class="user-job">{{user.job}}</h4>
+  </div>
+
+  <!-- add feedback button -->
+  <button class="feedback-link flex center between" (click)="openFeedbackModal()">
+    <div>
+      <span class="ic ic-feedback"></span>
+      Let us know how we can improve
+    </div>
+    <span class="ic ic-to"></span>
+  </button>
+
+  <!-- user votes & comments -->
+  <div class="section-content">
+    <comments [comments]="user.votes" showMoodName="true"></comments>
+  </div>
+</ion-content>
+
+<!-- page footer -->
+<ion-footer>
+  <page-footer active="profile"></page-footer>
+</ion-footer>

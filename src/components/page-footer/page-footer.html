@@ -1,0 +1,20 @@
+<ion-toolbar color="light">
+  <ion-buttons>
+    <!-- home button -->
+    <button ion-button [class.active]="active==='home'" (click)="(active!=='home')&&navigate()">
+      <span class="ic ic-home"></span>
+      <div>Home</div>
+    </button>
+    <!-- team button -->
+    <button ion-button [class.active]="active==='team'" (click)="(active!=='team')&&navigate('TeamsPage')">
+      <span class="ic ic-team"></span>
+      <div>Team</div>
+    </button>
+    <!-- profile button -->
+    <button ion-button [class.active]="active==='profile'" (click)="(active!=='profile')&&navigate('ProfilePage')">
+      <span class="ic ic-user"></span>
+      <div>Profile</div>
+    </button>
+  </ion-buttons>
+</ion-toolbar>
+

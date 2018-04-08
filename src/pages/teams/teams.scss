@@ -1,0 +1,11 @@
+page-teams {
+  // position the date selector
+  .date-nav {
+    margin: 0 -15px;
+    padding-top: 10px;
+
+    .button:last-child {
+      margin-right: 15px;
+    }
+  }
+}

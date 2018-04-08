@@ -1,0 +1,88 @@
+$icon-path: '../assets/icon';
+
+// Application wide icons
+
+.ic {
+  display: inline-block;
+  vertical-align: middle;
+  background: center no-repeat;
+  background-size: contain;
+}
+
+.ic-mic {
+  background-image: url($icon-path+'/icon-mic.png');
+  width: 15px;
+  height: 22px;
+}
+
+.ic-keyboard {
+  background-image: url($icon-path+'/icon-keyboard.png');
+  width: 25px;
+  height: 18px;
+}
+
+.ic-arrow-right {
+  background-image: url($icon-path+'/icon-arrow-right.svg');
+  width: 22px;
+  height: 22px;
+}
+
+.ic-home {
+  background-image: url($icon-path+'/icon-home.png');
+  width: 27px;
+  height: 27px;
+}
+
+.ic-team {
+  background-image: url($icon-path+'/icon-team.png');
+  width: 27px;
+  height: 27px;
+}
+
+.ic-user {
+  background-image: url($icon-path+'/icon-user.png');
+  width: 27px;
+  height: 27px;
+}
+
+.ic-back {
+  background-image: url($icon-path+'/icon-back.png');
+  width: 12px;
+  height: 20px;
+}
+
+.ic-search {
+  background-image: url($icon-path+'/icon-search.svg');
+  width: 20px;
+  height: 20px;
+}
+
+.ic-comments {
+  background-image: url($icon-path+'/icon-comments.png');
+  width: 20px;
+  height: 20px;
+}
+
+.ic-feedback {
+  background-image: url($icon-path+'/icon-comments-blue.png');
+  width: 26px;
+  height: 26px;
+}
+
+.ic-to {
+  background-image: url($icon-path+'/icon-to.png');
+  width: 8px;
+  height: 13px;
+}
+
+.ic-bar {
+  background-image: url($icon-path+'/icon-bar.png');
+  width: 20px;
+  height: 18px;
+}
+
+.ic-line {
+  background-image: url($icon-path+'/icon-line.png');
+  width: 20px;
+  height: 17px;
+}

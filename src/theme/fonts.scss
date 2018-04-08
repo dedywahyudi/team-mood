@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url($font-path+'/SFProDisplay-Light.eot?#iefix') format('embedded-opentype'),  url($font-path+'/SFProDisplay-Light.otf')  format('opentype'),
+       url($font-path+'/SFProDisplay-Light.woff') format('woff'), url($font-path+'/SFProDisplay-Light.ttf')  format('truetype'), url($font-path+'/SFProDisplay-Light.svg#SFProDisplay-Light') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url($font-path+'/SFProDisplay-Regular.eot?#iefix') format('embedded-opentype'),  url($font-path+'/SFProDisplay-Regular.otf')  format('opentype'),
+       url($font-path+'/SFProDisplay-Regular.woff') format('woff'), url($font-path+'/SFProDisplay-Regular.ttf')  format('truetype'), url($font-path+'/SFProDisplay-Regular.svg#SFProDisplay-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'SFProDisplay';
+  src: url($font-path+'/SFProDisplay-Medium.eot?#iefix') format('embedded-opentype'),  url($font-path+'/SFProDisplay-Medium.otf')  format('opentype'),
+       url($font-path+'/SFProDisplay-Medium.woff') format('woff'), url($font-path+'/SFProDisplay-Medium.ttf')  format('truetype'), url($font-path+'/SFProDisplay-Medium.svg#SFProDisplay-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}

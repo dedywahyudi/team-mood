@@ -1,0 +1,16 @@
+<!-- the chart will be rendered within this element -->
+<div class="chart-el" #chartEl></div>
+
+<!-- the element for the chart tooltip -->
+<div #tooltipEl>
+  <div class="tooltip" *ngIf="tooltipData" [style.left.px]="tooltipData.x">
+    <!-- show selected element's date -->
+    {{tooltipData.date|date:'MMM dd, yyyy'}}
+    <!-- show selected element's voted mood count -->
+    <ul class="moods-wrap">
+      <li class="mood" [attr.data-mood]="mood" *ngFor="let mood of tooltipData.bands">
+        <span>{{tooltipData.items[mood] || 0}}</span>
+      </li>
+    </ul>
+  </div>
+</div>

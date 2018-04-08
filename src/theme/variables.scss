@@ -1,0 +1,100 @@
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app.
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+$colors: (
+  primary:     #2d3946,
+  secondary:   #006bd5,
+  danger:      #f9384a,
+  light:       #ffffff,
+  lighter:     #627180,
+  dark:        #2d3946,
+  darker:      #282e36,
+
+  'very happy': #008164,
+  happy:        #21b578,
+  neutral:      #399cfd,
+  sad:          #ffa200,
+  'very sad':   #f9384a,
+
+  bg:           #ecf1f6,
+  placeholder:  #e6e9eb,
+  digest:       #627180,
+  border:       #d2d2d2,
+  footerBorder: #b2b2b2,
+  trackBg:      #38434f,
+  highlight:    #a8a8a8,
+
+  text: (
+    base:       #666666,
+    light:      #999999,
+    dark:       #333333,
+    contrast:   #ffffff
+  )
+);
+
+$content-padding: 10px;
+$background-color: color($colors, dark);
+
+$h1-font-size: 34px;
+$h2-font-size: 28px;
+$h3-font-size: 18px;
+$h4-font-size: 16px;
+$h5-font-size: 14px;
+$h6-font-size: 12px;
+$headings-line-height: 1;
+
+$text-ios-color: color($colors, text, base);
+$text-md-color: $text-ios-color;
+
+$button-md-box-shadow: none;
+$button-md-text-transform: none;
+
+$toolbar-ios-height: 49px;
+$toolbar-md-height: $toolbar-ios-height;
+
+$button-ios-height: 40px;
+$button-md-height: $button-ios-height;
+$button-ios-font-size: 18px;
+$button-md-font-size: $button-ios-font-size;
+
+$select-ios-icon-color: color($colors, secondary);
+$select-md-icon-color: $select-ios-icon-color;
+$list-background-color: color($colors, light);
+$popover-ios-background: color($colors, light);
+$popover-ios-arrow-background: $popover-ios-background;
+$popover-md-background: $popover-ios-background;
+$popover-md-arrow-background: $popover-ios-background;
+
+$list-ios-margin-top: 0;
+$list-ios-margin-bottom: 0;
+$list-md-margin-top: $list-ios-margin-top;
+$list-md-margin-bottom: $list-ios-margin-bottom;
+$list-border-color: transparent;
+$list-md-border-color: transparent;
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+
+@import './icons';
+
+
+// Fonts
+// --------------------------------------------------
+@import './fonts';
+
+$main-font: 'SFProDisplay';
+$font-family-base: $main-font;
+$font-family-md-base: $font-family-base;
+
+// list with all moods
+$moods: 'very sad', 'sad', 'neutral', 'happy', 'very happy';
